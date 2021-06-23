@@ -1,3 +1,3 @@
-bodyOnLoad(){
+function bodyOnLoad(){
 	alert('loaded')
 }
