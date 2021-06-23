@@ -1,0 +1,3 @@
+bodyOnLoad(){
+	alert('loaded')
+}
