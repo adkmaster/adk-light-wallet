@@ -1,3 +1,10 @@
 .fixedWidth100px{
 	width: 100px;
 }
+body {
+  font-size: 11px;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 700; 
+}
