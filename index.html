@@ -1,8 +1,45 @@
 <HTML>
 <HEAD>
+<script type="text/javascript" src="aidos.js"></script>
 <script type="text/javascript" src="index.js"></script>
+<link rel="stylesheet" href="index.css">
 </HEAD>
 <body onload="bodyOnLoad()">
+<table style="width: 90%;" border="1">
+<tbody>
+<tr>
+<td style='width:200px'>Node</td>
+<td style='width:500px'><input id='node' name='node' value='http://wallet.aidoskuneen.com:14266' type='text' style='width:100%'></td>
+</tr>
+<tr>
+<td style='width:200px'>Click "Set Node" to Set/View Node</td>
+<td style='width:500px'><input id='nodeInfoBtn' name='nodeInfoBtn' value='Set Node' type='button' onClick="GetNodeInfo()" style='width:100%'></td>
+</tr>
+<tr>
+<td style='width:200px'>Seed</td>
+<td style='width:500px'><input id='seed' name='seed' value='A99999999999999999999999999999999999999999999999999999999999999999999999999999999' placeholder='YOUR SEED' type='text' style='width:100%'></td>
+</tr>
+<tr>
+<td style='width:200px'>Scan Address Index START</td>
+<td style='width:500px'><input id='addressIndexStart' name='addressIndexStart' value='0' type='text' style='width:100%'></td>
+</tr>
+<tr>
+<td style='width:200px'>Scan Address Index END</td>
+<td style='width:500px'><input id='addressIndexEnd' name='addressIndexEnd' value='30' type='text' style='width:100%'></td>
+</tr>
+<tr>
+<td style='width:200px'>Click "SCAN ADDRESSES" to View Balances</td>
+<td style='width:500px'><input id='scanAddresses' name='scanAddresses' value='SCAN ADDRESSES' type='button' onClick="ScanAddressesButton()" style='width:100%'></td>
+</tr>
+</tbody>
+
+<hr/>
+
+</table>
+<table style="width: 90%;" border="1">
+<tbody id='addrList'>
+</tbody>
+</table>
 
 </BODY>
 </HTML>
