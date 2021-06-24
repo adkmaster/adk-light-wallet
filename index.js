@@ -72,6 +72,7 @@ function ScanAddressesButton(){
 	setStatus("Generating Addresses... please wait");
 	window.inputs = [];
 	setTimeout(() => {
+		try{
 		const addrList = document.getElementById("addrList");
 		addrList.innerHTML = '';
 		
@@ -153,6 +154,13 @@ function ScanAddressesButton(){
 				})
 			}
 		});
+		}
+		catch (err){
+			operationInProgress = false;
+			alert(err);
+			console.log(err);
+			setStatus("Error fetching addresses. Sis you enter a valid seed and start/end index range?");
+		}
 	}, 500);
 }
 
