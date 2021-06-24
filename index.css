@@ -2,9 +2,22 @@
 	width: 100px;
 }
 body {
-  font-size: 11px;
-  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; 
-  font-style: normal; 
-  font-variant: normal; 
-  font-weight: 700; 
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
+.loader {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.td200 { width:200px;padding:5px; }
+
+.td500 { width:500px;padding:5px; }

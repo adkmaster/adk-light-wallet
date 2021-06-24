@@ -3726,7 +3726,7 @@
             )
               return false;
 
-            if (!isAddress(address)) {
+            if (!isAddress(input.address)) {
               return false;
             }
           }

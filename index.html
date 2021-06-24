@@ -5,41 +5,81 @@
 <link rel="stylesheet" href="index.css">
 </HEAD>
 <body onload="bodyOnLoad()">
-<table style="width: 90%;" border="1">
+<h1>Aidos Kuneen (ADK) Light Wallet</h1>
+<h2>Query:</h2>
+<table style="width: 90%; border-collapse: collapse;" border="1">
 <tbody>
 <tr>
-<td style='width:200px'>Node</td>
-<td style='width:500px'><input id='node' name='node' value='http://wallet.aidoskuneen.com:14266' type='text' style='width:100%'></td>
+<td class='td200'>Node</td>
+<td class='td500'><input id='node' name='node' value='http://wallet.aidoskuneen.com:14266' type='text' style='width:100%'></td>
 </tr>
 <tr>
-<td style='width:200px'>Click "Set Node" to Set/View Node</td>
-<td style='width:500px'><input id='nodeInfoBtn' name='nodeInfoBtn' value='Set Node' type='button' onClick="GetNodeInfo()" style='width:100%'></td>
+<td class='td200'>Click "Get Node Info" to check connection.</td>
+<td class='td500'><input id='nodeInfoBtn' name='nodeInfoBtn' value='Get Node Info' type='button' onClick="GetNodeInfo()" style='width:100%'/></td>
 </tr>
 <tr>
-<td style='width:200px'>Seed</td>
-<td style='width:500px'><input id='seed' name='seed' value='A99999999999999999999999999999999999999999999999999999999999999999999999999999999' placeholder='YOUR SEED' type='text' style='width:100%'></td>
+<td class='td200'>Seed</td>
+<td class='td500'><input id='seed' autocomplete="off" name='seed' value='' placeholder='YOUR SEED' type='text' style='width:100%'></td>
 </tr>
 <tr>
-<td style='width:200px'>Scan Address Index START</td>
-<td style='width:500px'><input id='addressIndexStart' name='addressIndexStart' value='0' type='text' style='width:100%'></td>
+<td class='td200'>Scan Address Index START</td>
+<td class='td500'><input id='addressIndexStart' name='addressIndexStart' value='0' type='text' style='width:100%'/></td>
 </tr>
 <tr>
-<td style='width:200px'>Scan Address Index END</td>
-<td style='width:500px'><input id='addressIndexEnd' name='addressIndexEnd' value='30' type='text' style='width:100%'></td>
+<td class='td200'>Scan Address Index END</td>
+<td class='td500'><input id='addressIndexEnd' name='addressIndexEnd' value='5' type='text' style='width:100%'/></td>
 </tr>
 <tr>
-<td style='width:200px'>Click "SCAN ADDRESSES" to View Balances</td>
-<td style='width:500px'><input id='scanAddresses' name='scanAddresses' value='SCAN ADDRESSES' type='button' onClick="ScanAddressesButton()" style='width:100%'></td>
+<td class='td200'>Only show addresses with balance</td>
+<td class='td500'><input id='addressValOnly' name='addressValOnly' value='Y' type='checkbox' /></td>
+</tr>
+<tr>
+<td class='td200'>Click "SCAN ADDRESSES" to View Balances</td>
+<td class='td500'><input id='scanAddresses' name='scanAddresses' value='SCAN ADDRESSES' type='button' onClick="ScanAddressesButton()" style='width:100%'/></td>
+</tr>
+<tr style="background-color:#FFFFE0">
+<td class='td200'>Status <div id="loader" class="loader" style="display:none"></div></td>
+<td class='td500'><b><span  id="status"/></b></td>
 </tr>
 </tbody>
-
-<hr/>
-
 </table>
-<table style="width: 90%;" border="1">
+
+<h2>Addresses:</h2>
+<table style="width: 90%; border-collapse: collapse;" border="1">
 <tbody id='addrList'>
 </tbody>
 </table>
-
+<div id="addrinfo" name="addrinfo"></div>
+<div id="sendADK">
+	<h2>Send ADK:</h2>
+	<table style="width: 90%; border-collapse: collapse;" border="1">
+	<tbody>
+	<tr>
+	<td class='td200'>Send to Address (incl. checksum):</td>
+	<td class='td500'><input id='destAddress' name='destAddress' value='' placeholder='Destination ADK Address (with checksum), 90 char total' type='text' style='width:100%'></td>
+	</tr>
+	<tr>
+	<td class='td200'>Amount to send (in ADK, dot "." is decimal)</td>
+	<td class='td500'><input id='amountToSend' name='amountToSend' value='' placeholder="Amount of ADK to send. e.g. 1.234" type='text' style='width:100%'/></td>
+	</tr>
+	<tr>
+	<td class='td200'>Remainder Address (incl. checksum):</td>
+	<td class='td500'><input id='remainderAddress' name='remainderAddress' value='' placeholder='Enter your next free, unused ADK Address (for any remainder amounts)' type='text' style='width:100%'></td>
+	</tr>
+	<tr>
+	<td class='td200'>TAG for Transaction (optional)</td>
+	<td class='td500'><input id='transferTag' name='transferTag' value='' type='text' placeholder='Optional Tag, only A-Z9, max 27 length' style='width:100%'/></td>
+	</tr>
+	<tr>
+	<td class='td200'>Smart Data for Transaction (optional)</td>
+	<td class='td500'><input id='smartData' name='smartData' value='' type='text' placeholder='Smart Data (e.g. wADK Ethereum Address), only A-Z9, max 81 length' style='width:100%'/></td>
+	</tr>
+	<tr>
+	<td class='td200'>Start Transfer</td>
+	<td class='td500'><input id='doTransfer' name='doTransfer' value='Do Proof-of-Work (on Node) &amp; Transfer' type='button' onClick="DoTransfer()" style='width:100%'/></td>
+	</tr>
+	</tbody>
+	</table>
+</div>
 </BODY>
 </HTML>
